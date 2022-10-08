@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="src/styles.css" />
+    <title>WeatherForecast</title>
+  </head>
+  <body>
+    <br />
+    <h1 id="city">Frankfurt-am-Main</h1>
+    <div class="date"></div>
+    <br />
+    <form id="selectorCity">
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label"></label>
+        <input
+          type="text"
+          class="form-control"
+          id="typeCity"
+          placeholder="🔍Type a city"
+        />
+        <br />
+        <div class="col-3">
+          <input
+            type="submit"
+            value="Search"
+            class="form-control btn btn-primary shadow-sm"
+          />
+        </div>
+        <br />
+        <div class="col-4">
+          <input
+            type="submit"
+            value="Current"
+            class="form-control btn btn-primary shadow-sm"
+          />
+        </div>
+      </div>
+    </form>
+    <h2 class="border">
+      <span id="currentTrmperature">+23</span>
+      <span>°С </span>
+      <div class="col-6">
+        <ul>
+          <li id="feels">Feels like: 13 °С;</li>
+          <li id="humid">Humidity: 77%</li>
+          <li id="winds">Wind: 8 km/h</li>
+        </ul>
+      </div>
+    </h2>
+    <br />
+    <br />
+    <div class="container">
+      <div class="row">
+        <div class="col-2 border">
+          <img src="src/images/Frankfurt.png" alt="Frankfurt" />+20<img
+            src="src/images/suncloud.png"
+            alt="sunCloud"
+          />
+        </div>
+        <div class="col-2 border">
+          <img src="src/images/Frankfurt.png" alt="Frankfurt" />+15<img
+            src="src/images/rain.png"
+            alt="rain"
+          />
+        </div>
+        <div class="col-2 border">
+          <img src="src/images/Frankfurt.png" alt="Frankfurt" />+15<img
+            src="src/images/suncloud.png"
+            alt="sunCloud"
+          />
+        </div>
+        <div class="col-2 border">
+          <img src="src/images/Frankfurt.png" alt="Frankfurt" />+28<img
+            src="src/images/sun.png"
+            alt="sun"
+          />
+        </div>
+        <div class="col-2 border">
+          <img src="src/images/Frankfurt.png" alt="Frankfurt" />+20<img
+            src="src/images/suncloud.png"
+            alt="sunCloud"
+          />
+        </div>
+        <div class="col-2 border">
+          <img src="src/images/Frankfurt.png" alt="Frankfurt" />+20<img
+            src="src/images/suncloud.png"
+            alt="sunCloud"
+          />
+        </div>
+      </div>
+    </div>
+    <script src="src/index.js"></script>
+  </body>
+</html>
