@@ -19,93 +19,63 @@
     <title>WeatherForecast</title>
   </head>
   <body>
-    <br />
-    <h1 id="city">Frankfurt-am-Main</h1>
-    <div class="date"></div>
-    <br />
-    <form id="selectorCity">
-      <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label"></label>
-        <input
-          type="text"
-          class="form-control"
-          id="typeCity"
-          placeholder="🔍Type a city"
-        />
-        <br />
-        <div class="col-3">
-          <input
-            type="submit"
-            value="Search"
-            class="form-control btn btn-primary shadow-sm"
-          />
-        </div>
-        <br />
-        <div class="col-4">
-          <input
-            type="submit"
-            value="Current"
-            class="form-control btn btn-primary shadow-sm"
-          />
-        </div>
-      </div>
-    </form>
-    <h2 class="border">
-      <span id="currentTrmperature">+23</span>
-      <span>°С </span>
-      <div class="col-6">
-        <ul>
-          <li id="feels">Feels like: 13 °С;</li>
-          <li id="humid">Humidity: 77%</li>
-          <li id="winds">Wind: 8 km/h</li>
-        </ul>
-      </div>
-    </h2>
-    <br />
-    <br />
     <div class="container">
-      <div class="row">
-        <div class="col-2 border">
-          <img src="src/images/Frankfurt.png" alt="Frankfurt" />+20<img
-            src="src/images/suncloud.png"
-            alt="sunCloud"
-          />
+      <div class="weather-app-wrapper">
+        <div class="weather-app">
+          <form id="search-form" class="mb-3">
+            <div class="row">
+              <div class="col-9">
+                <input
+                  type="search"
+                  placeholder="Type a city.."
+                  class="form-control"
+                  id="city-input"
+                  autocomplete="off"
+                />
+              </div>
+              <div class="col-3">
+                <input
+                  type="submit"
+                  value="Search"
+                  class="btn btn-primary w-100"
+                />
+              </div>
+            </div>
+          </form>
+          <div class="overview">
+            <h1 id="city">Frankfurt-am-Main</h1>
+            <ul>
+              <li>Last update: <span id="date"></span></li>
+              <li id="description">Sunny</li>
+            </ul>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              <div class="d-flex weather-temperature">
+                <img src="src/images/sun.png" alt="Sunny" id="icon" />
+
+                <strong id="temperature">23</strong
+                ><span class="units"> °C</span>
+              </div>
+            </div>
+            <div class="col-6">
+              <ul>
+                <li>Feels like: <span id="feelsLike"></span> °C</li>
+                <li>Humidity: <span id="humidity"></span> %</li>
+                <li>Wind: <span id="wind"></span> m/h</li>
+              </ul>
+            </div>
+          </div>
+          <div class="weather-forecast" id="forecast"></div>
         </div>
-        <div class="col-2 border">
-          <img src="src/images/Frankfurt.png" alt="Frankfurt" />+15<img
-            src="src/images/rain.png"
-            alt="rain"
-          />
-        </div>
-        <div class="col-2 border">
-          <img src="src/images/Frankfurt.png" alt="Frankfurt" />+15<img
-            src="src/images/suncloud.png"
-            alt="sunCloud"
-          />
-        </div>
-        <div class="col-2 border">
-          <img src="src/images/Frankfurt.png" alt="Frankfurt" />+28<img
-            src="src/images/sun.png"
-            alt="sun"
-          />
-        </div>
-        <div class="col-2 border">
-          <img src="src/images/Frankfurt.png" alt="Frankfurt" />+20<img
-            src="src/images/suncloud.png"
-            alt="sunCloud"
-          />
-        </div>
-        <div class="col-2 border">
-          <img src="src/images/Frankfurt.png" alt="Frankfurt" />+20<img
-            src="src/images/suncloud.png"
-            alt="sunCloud"
-          />
-        </div>
+        <small>
+          <a href="https://github.com/LenaKvitka" target="_blank"
+            >Open-source code</a
+          >
+          by LenaKvitka (Bakhchevan)
+        </small>
       </div>
     </div>
-    <a href="https://github.com/LenaKvitka?tab=repositories" class="myGit"
-      >Open-source code, by Olena Bakhchevan (LenaKvitka)</a
-    >
     <script src="src/index.js"></script>
   </body>
 </html>

@@ -25,7 +25,7 @@ function formatDate(date) {
 function search(event) {
   event.preventDefault();
   let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
-  let city = document.querySelector("#typeCity").value;
+  let city = document.querySelector("#city-input").value;
   let units = "metric";
 
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
@@ -33,38 +33,26 @@ function search(event) {
   axios.get(apiUrl).then(showForecast);
 }
 
-let form = document.querySelector("#selectorCity");
+let form = document.querySelector("#search-form");
 form.addEventListener("submit", search);
-let dateElement = document.querySelector(".date");
+let dateElement = document.querySelector("#date");
 let currentTime = new Date();
 dateElement.innerHTML = formatDate(currentTime);
-let searchForm = document.querySelector("#selectorCity");
+let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", search);
 
 function showForecast(response) {
   document.querySelector("#city").innerHTML = response.data.name;
   let temperature = Math.round(response.data.main.temp);
-  let h1 = document.querySelector("#currentTrmperature");
+  let h1 = document.querySelector("#temperature");
   h1.innerHTML = temperature;
   let humidity = Math.round(response.data.main.humidity);
-  let li1 = document.querySelector("#humid");
-  li1.innerHTML = `Humidity: ${humidity} %`;
+  let li1 = document.querySelector("#humidity");
+  li1.innerHTML = `${humidity}`;
   let feelsLike = Math.round(response.data.main.feels_like);
-  let li2 = document.querySelector("#feels");
-  li2.innerHTML = `Feels like: ${feelsLike} °С`;
+  let li2 = document.querySelector("#feelsLike");
+  li2.innerHTML = `${feelsLike}`;
   let windSpeed = Math.round(response.data.wind.speed);
-  let li3 = document.querySelector("#winds");
-  li3.innerHTML = `Wind: ${windSpeed} km/h`;
+  let li3 = document.querySelector("#wind");
+  li3.innerHTML = `${windSpeed}`;
 }
-function getCurrentPosition() {
-  navigator.geolocation.getCurrentPosition(showPosition);
-  console.log(position.coords.latitude);
-  console.log(position.coords.longitude);
-}
-
-function showPosition(position) {
-  let buttonP = document.querySelector("#city");
-  buttonP.innerHTML = `Your position is ${position.coords.latitude}`;
-}
-let buttonPosition = document.querySelector(".col-4");
-buttonPosition.addEventListener = ("submit", getCurrentPosition);
