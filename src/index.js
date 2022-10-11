@@ -55,4 +55,7 @@ function showForecast(response) {
   let windSpeed = Math.round(response.data.wind.speed);
   let li3 = document.querySelector("#wind");
   li3.innerHTML = `${windSpeed}`;
+  let description = response.data.weather[0].description;
+  let li4 = document.querySelector("#description");
+  li4.innerHTML = `${description}`;
 }
