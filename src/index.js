@@ -22,19 +22,20 @@ function formatDate(date) {
 
   return `${day} ${hours}:${minutes}`;
 }
-function search(event) {
-  event.preventDefault();
+function search(city) {
   let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
-  let city = document.querySelector("#city-input").value;
   let units = "metric";
-
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
-
   axios.get(apiUrl).then(showForecast);
 }
-
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityInputElement = document.querySelector("#city-input");
+  search(cityInputElement.value);
+}
+search("Lviv");
 let form = document.querySelector("#search-form");
-form.addEventListener("submit", search);
+form.addEventListener("submit", handleSubmit);
 let dateElement = document.querySelector("#date");
 let currentTime = new Date();
 dateElement.innerHTML = formatDate(currentTime);
